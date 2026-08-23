@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mina El Gran Porvenir | El Líbano, Tolima</title>
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #e67e22;
+            --light: #f4f6f7;
+            --gray: #7f8c8d;
+            --dark-card: #2c3e50;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--light);
+            color: var(--primary);
+            line-height: 1.6;
+        }
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        header h1 {
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.3rem 0.8rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s, background 0.3s;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: var(--accent);
+            background: rgba(255,255,255,0.05);
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/DSC00252.JPG') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            color: #dcdde1;
+        }
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: #d35400;
+        }
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+        section h3::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 12px auto 0 auto;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        .card {
+            background: white;
+            padding: 2.2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-top: 5px solid var(--dark-card);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h4 {
+            margin-bottom: 1rem;
+            color: var(--dark-card);
+            font-size: 1.4rem;
+        }
+        .card p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        .equipo-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+        }
+
+        /* ESTILOS PARA EL CARRUSEL */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+            z-index: 10;
+        }
+        .slider-btn:hover {
+            background: var(--accent);
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        .map-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .map-link:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 4rem;
+            border-top: 1px solid #444;
+        }
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .header-brand {
+                margin-bottom: 15px;
+            }
+            nav {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-brand">
+            <img src="img/LOGO.png" alt="Logo Mina El Gran Porvenir" class="logo-img">
+            <h1>Mina El Gran Porvenir</h1>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Empresa</a>
+            <a href="#procesos">Procesos</a>
+            <a href="#mantenimiento">Mantenimiento</a>
+            <a href="#personal">Personal y HSEQ</a>
+            <a href="#comunidad">Comunidad</a>
+            <a href="#trabaja">Empleo</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- ENCABEZADO ORIGINAL RESTAURADO -->
+    <div class="hero" id="inicio">
+        <h2>Minería Responsable, Confiable y con Futuro</h2>
+        <p>Operando desde el corazón de El Líbano, Tolima. Impulsando el desarrollo industrial con altos estándares de ingeniería, seguridad operativa y compromiso social.</p>
+        <a href="#procesos" class="btn">Conozca Nuestros Procesos</a>
+    </div>
+
+    <!-- SECCIÓN: EMPRESA Y QUIÉNES SOMOS -->
+    <section id="nosotros">
+        <h3>Nuestra Evolución e Identidad</h3>
+        <div class="grid">
+            <div class="card">
+                <h4>Trayectoria y Transformación</h4>
+                <p>Con el pasar de los años, nuestra empresa ha venido evolucionando de manera integral. Lo que inició como un modelo de entable tradicional se ha transformado radicalmente, reflejando un cambio visual, organizacional y operativo profundo en todas nuestras áreas de trabajo.</p>
+            </div>
+            <div class="card">
+                <h4>Visión y Misión</h4>
+                <p>Consolidarnos como referentes de la minería regional mediante la innovación tecnológica continua, la optimización de recursos y un modelo de gestión corporativa moderno y transparente.</p>
+            </div>
+            <div class="card">
+                <h4>Innovación y Tecnología</h4>
+                <p>Integramos herramientas de ingeniería de mantenimiento predictivo, análisis de criticidad y control automatizado, marcando un antes y un después en la eficiencia de nuestra planta.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: PROCESOS -->
+    <section id="procesos" style="background: #eef2f3;">
+        <h3>Nuestros Procesos Operativos</h3>
+        <div class="grid">
+            <div class="card">
+                <h4>Extracción y Geomecánica</h4>
+                <p>Planificación rigurosa de las labores extractivas, asegurando la estabilidad del entorno minero y un suministro de mineral constante y controlado hacia la planta de beneficio.</p>
+            </div>
+            <div class="card">
+                <h4>Trituración</h4>
+                <p>Sistemas de reducción de tamaño altamente optimizados. Gracias al esfuerzo y la modernización de nuestras líneas, logramos una conminución eficiente que garantiza la granulometría precisa para las siguientes etapas.</p>
+            </div>
+            <div class="card">
+                <h4>Molienda y Clasificación</h4>
+                <p>Circuitos integrados por molinos y sistemas de clasificación avanzados, maximizando la liberación de partículas y asegurando un rendimiento metalúrgico de alta calidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: MANTENIMIENTO INDUSTRIAL -->
+    <section id="mantenimiento">
+        <h3>Mantenimiento e Ingeniería de Confiabilidad</h3>
+        <div class="grid">
+            <div class="card">
+                <h4>Gestión Evolutiva de Activos</h4>
+                <p>El cambio organizacional se refleja en nuestra transición hacia metodologías de Mantenimiento Centrado en Confiabilidad (RCM) y Mantenimiento Productivo Total (TPM) para garantizar cero paradas imprevistas.</p>
+            </div>
+            <div class="card">
+                <h4>Equipo Destacado: B4</h4>
+                <img src="img/B4.JPG" alt="Equipo B4" class="equipo-img">
+                <h4>Unidad B4 en Operación</h4>
+                <p>Componente vital en nuestra línea de proceso. Monitoreamos constantemente sus parámetros de desgaste, lubricación y vibración bajo estrictos protocolos técnicos.</p>
+            </div>
+            <div class="card">
+                <h4>Lubricación y Predictivo</h4>
+                <p>Control riguroso de frecuencias de re-lubricación, análisis térmico de cojinetes y seguimiento exhaustivo de indicadores clave para garantizar la máxima disponibilidad operativa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: MANEJO DE PERSONAL Y HSEQ -->
+    <section id="personal" style="background: #eef2f3;">
+        <h3>Manejo de Personal y Seguridad (HSEQ)</h3>
+        <div class="grid">
+            <div class="card">
+                <h4>Cultura de Seguridad Industrial</h4>
+                <p>Nuestra empresa ha evolucionado con el pasar de los años, transformándose desde un entable tradicional hasta convertirse en una planta tecnificada. La seguridad es nuestro valor intransable: implementamos Procedimientos Escritos de Trabajo Seguro (PETS), charlas operativas de corto intervalo (AIC-30) y un uso riguroso de EPPs.</p>
+            </div>
+            <div class="card">
+                <h4>Desarrollo del Talento Humano</h4>
+                <p>Fomentamos el trabajo en equipo, la capacitación técnica constante de nuestros operadores y mecánicos, y canales de comunicación abiertos para garantizar un clima laboral seguro y motivador.</p>
+            </div>
+            <div class="card">
+                <h4>Gestión de Riesgos y Salud Ocupacional</h4>
+                <p>Protocolos permanentes de prevención de riesgos, pausas activas, inspecciones de pre-uso de maquinaria y acompañamiento continuo en cada turno de trabajo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: COMPROMISO COMUNITARIO CON CARRUSEL INTERACTIVO -->
+    <section id="comunidad">
+        <h3>Compromiso Comunitario y Ambiental</h3>
+        <div class="grid" style="grid-template-columns: 1fr;">
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <h4>Entorno, Sostenibilidad y Comunidad</h4>
+                
+                <!-- CARRUSEL DE IMÁGENES -->
+                <div class="slider-container">
+                    <img src="img/comunidad.jpeg" alt="Comunidad 1" class="slide active">
+                    <img src="img/DSC00252.JPG" alt="Entorno Minero 2" class="slide">
+                    <img src="img/B4.JPG" alt="Planta y Entorno 3" class="slide">
+                    
+                    <button class="slider-btn prev" onclick="changeSlide(-1)">&#10046;</button>
+                    <button class="slider-btn next" onclick="changeSlide(1)">&#10047;</button>
+                </div>
+                
+                <p>En la Mina El Gran Porvenir creemos firmemente que la minería moderna y en evolución debe coexistir en armonía con su entorno. Desarrollamos programas de gestión eficiente del agua, optimización energética y un fuerte vínculo participativo con las comunidades de la región de El Líbano.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: TRABAJA CON NOSOTROS -->
+    <section id="trabaja" style="background: #eef2f3;">
+        <h3>Trabaja con Nosotros</h3>
+        <div style="max-width: 700px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); text-align: center;">
+            <h4 style="color: var(--dark-card); margin-bottom: 1rem; font-size: 1.4rem;">¡Únete a nuestro equipo en evolución!</h4>
+            <p style="margin-bottom: 1.5rem; color: #555;">Si eres profesional o técnico apasionado por la minería moderna, la mecánica industrial o la seguridad, envíanos tu hoja de vida a nuestro canal de captación de talento.</p>
+            <a href="mailto:contacto@elgranporvenir.com?subject=Hoja%20de%20Vida%20-%20[Tu%20Nombre%20y%20Apellido]&body=Hola,%20adjunto%20mi%20hoja%20de%20vida%20para%20participar%20en%20las%20convocatorias%20de%20la%20Mina%20El%20Gran%20Porvenir." class="btn">
+                Enviar Hoja de Vida por Correo
+            </a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CONTACTO -->
+    <section id="contacto">
+        <h3>Contacto y Canales de Atención</h3>
+        <div style="text-align: center; max-width: 650px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+            <p style="margin-bottom: 1.5rem;">Estamos ubicados estratégicamente para atender sus requerimientos industriales y comerciales.</p>
+            
+            <p style="margin-bottom: 0.8rem;"><strong>📍 Ubicación:</strong> 
+                <a href="https://earth.google.com/web/search/El+L%C3%ADbano,+Tolima,+Colombia" target="_blank" class="map-link">
+                    El Líbano, Tolima, Colombia (Ver en Google Earth)
+                </a>
+            </p>
+            <p style="margin-bottom: 0.8rem;"><strong>📞 Línea Ética (Alejandro Muñoz):</strong> +57 (300) 000-0000</p>
+            <p style="margin-bottom: 0.8rem;"><strong>📞 Teléfonos de Contacto:</strong> +57 (300) 000-0000 / +57 (8) 000-0000</p>
+            <p style="margin-bottom: 0.8rem;"><strong>✉️ Correo Electrónico:</strong> contacto@elgranporvenir.com</p>
+            
+            <p style="margin-top: 1.5rem;">
+                <a href="https://wa.me/573000000000" target="_blank" class="btn">Escribir por WhatsApp</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mina El Gran Porvenir. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT DE JAVASCRIPT PARA EL CARRUSEL -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        setInterval(() => {
+            changeSlide(1);
+        }, 4000);
+    </script>
+
+</body>
+</html>
