@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimiento e Ingeniería | Mina El Gran Porvenir</title>
+    <style>
+        :root { --primary: #1a1a1a; --accent: #e67e22; --light: #f4f6f7; --dark-card: #2c3e50; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--light); color: var(--primary); line-height: 1.6; }
+        header { background: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
+        .logo-img { height: 50px; width: auto; display: block; }
+        .header-brand { display: flex; align-items: center; gap: 15px; }
+        header h1 { font-size: 1.4rem; letter-spacing: 1px; }
+        nav { display: flex; flex-wrap: wrap; gap: 8px; }
+        nav a { color: white; text-decoration: none; padding: 0.3rem 0.7rem; font-weight: 600; font-size: 0.9rem; transition: color 0.3s, background 0.3s; border-radius: 4px; }
+        nav a:hover { color: var(--accent); background: rgba(255,255,255,0.05); }
+        .hero-sub { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/DSC00252.JPG') no-repeat center center/cover; color: white; text-align: center; padding: 5rem 2rem; }
+        section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+        section h3 { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: var(--primary); position: relative; }
+        section h3::after { content: ''; display: block; width: 80px; height: 4px; background: var(--accent); margin: 12px auto 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+        .card { background: white; padding: 2.2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 5px solid var(--dark-card); }
+        .card h4 { margin-bottom: 1rem; color: var(--dark-card); font-size: 1.4rem; }
+        footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid #444; }
+        @media (max-width: 1000px) { header { flex-direction: column; padding: 1rem; } .header-brand { margin-bottom: 15px; } nav { justify-content: center; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-brand">
+            <img src="img/LOGO.png" alt="Logo" class="logo-img">
+            <h1>Mina El Gran Porvenir</h1>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="empresa.html">Empresa</a>
+            <a href="procesos.html">Procesos</a>
+            <a href="trituracion.html">Trituración</a>
+            <a href="mantenimiento.html" style="color: var(--accent);">Mantenimiento</a>
+            <a href="personal.html">Personal y HSEQ</a>
+            <a href="comunidad.html">Comunidad y Medio ambiente</a>
+            <a href="index.html#trabaja">Empleo</a>
+            <a href="index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+    <div class="hero-sub">
+        <h2>Mantenimiento e Ingeniería de Confiabilidad</h2>
+        <p>Gestión de activos, disponibilidad mecánica y estrategias preventivas en planta.</p>
+    </div>
+    <section>
+        <h3>Estrategias de Mantenimiento</h3>
+        <div class="grid">
+            <div class="card">
+                <h4>Gestión Evolutiva de Activos</h4>
+                <p>Transición hacia metodologías de Mantenimiento Centrado en Confiabilidad (RCM) y Mantenimiento Productivo Total (TPM) para asegurar cero paradas imprevistas en equipos críticos.</p>
+            </div>
+            <div class="card">
+                <h4>Lubricación y Predictivo</h4>
+                <p>Control riguroso de frecuencias de re-lubricación, análisis térmico de cojinetes y seguimiento exhaustivo de indicadores clave para garantizar la máxima vida útil de los componentes.</p>
+            </div>
+            <div class="card">
+                <h4>Disponibilidad Mecánica</h4>
+                <p>Seguimiento continuo de tiempos de respuesta, control de repuestos críticos y planes de acción orientados a la mejora del rendimiento general de la planta.</p>
+            </div>
+        </div>
+    </section>
+    <footer><p>&copy; 2026 Mina El Gran Porvenir. Todos los derechos reservados.</p></footer>
+</body>
+</html>

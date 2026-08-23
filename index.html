@@ -53,14 +53,14 @@
         nav {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
         nav a {
             color: white;
             text-decoration: none;
-            padding: 0.3rem 0.8rem;
+            padding: 0.3rem 0.7rem;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: color 0.3s, background 0.3s;
             border-radius: 4px;
         }
@@ -69,10 +69,10 @@
             background: rgba(255,255,255,0.05);
         }
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('DSC00252.JPG') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/DSC00252.JPG') no-repeat center center/cover;
             color: white;
             text-align: center;
-            padding: 8rem 2rem;
+            padding: 7rem 2rem;
         }
         .hero h2 {
             font-size: 3rem;
@@ -144,64 +144,21 @@
         }
         .card p {
             color: #555;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
-        .equipo-img {
+        .area-img {
             width: 100%;
-            height: 260px;
+            height: 220px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 1.2rem;
         }
-
-        /* ESTILOS PARA EL CARRUSEL */
-        .slider-container {
-            position: relative;
-            width: 100%;
-            height: 350px;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .slide.active {
-            opacity: 1;
-        }
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 1.2rem;
-            border-radius: 4px;
-            transition: background 0.3s;
-            z-index: 10;
-        }
-        .slider-btn:hover {
-            background: var(--accent);
-        }
-        .prev { left: 10px; }
-        .next { right: 10px; }
-
         .map-link {
             color: var(--accent);
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
+            display: inline-block;
         }
         .map-link:hover {
             color: var(--primary);
@@ -215,7 +172,7 @@
             margin-top: 4rem;
             border-top: 1px solid #444;
         }
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
             header {
                 flex-direction: column;
                 padding: 1rem;
@@ -231,131 +188,95 @@
 </head>
 <body>
 
+    <!-- MENÚ FIJO GLOBAL EN TODAS LAS PÁGINAS -->
     <header>
         <div class="header-brand">
-            <img src="LOGO.png" alt="Logo Mina El Gran Porvenir" class="logo-img">
+            <img src="img/LOGO.png" alt="Logo Mina El Gran Porvenir" class="logo-img">
             <h1>Mina El Gran Porvenir</h1>
         </div>
         <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#nosotros">Empresa</a>
-            <a href="#procesos">Procesos</a>
-            <a href="#mantenimiento">Mantenimiento</a>
-            <a href="#personal">Personal y HSEQ</a>
-            <a href="#comunidad">Comunidad</a>
+            <a href="index.html">Inicio</a>
+            <a href="empresa.html">Empresa</a>
+            <a href="procesos.html">Procesos</a>
+            <a href="trituracion.html">Trituración</a>
+            <a href="mantenimiento.html">Mantenimiento</a>
+            <a href="personal.html">Personal y HSEQ</a>
+            <a href="comunidad.html">Comunidad y Medio ambiente</a>
             <a href="#trabaja">Empleo</a>
             <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
-    <!-- ENCABEZADO ORIGINAL RESTAURADO -->
+    <!-- INICIO: ENCABEZADO PRINCIPAL -->
     <div class="hero" id="inicio">
         <h2>Minería Responsable, Confiable y con Futuro</h2>
         <p>Operando desde el corazón de El Líbano, Tolima. Impulsando el desarrollo industrial con altos estándares de ingeniería, seguridad operativa y compromiso social.</p>
-        <a href="#procesos" class="btn">Conozca Nuestros Procesos</a>
+        <a href="procesos.html" class="btn">Conozca Nuestros Procesos</a>
     </div>
 
-    <!-- SECCIÓN: EMPRESA Y QUIÉNES SOMOS -->
-    <section id="nosotros">
-        <h3>Nuestra Evolución e Identidad</h3>
+    <!-- SECCIÓN DE ACCESOS VISUALES A CADA ÁREA (CUADRO DE IMÁGENES) -->
+    <section>
+        <h3>Nuestras Áreas Operativas e Institucionales</h3>
         <div class="grid">
+            
+            <!-- TARJETA 1: EMPRESA -->
             <div class="card">
-                <h4>Trayectoria y Transformación</h4>
-                <p>Con el pasar de los años, nuestra empresa ha venido evolucionando de manera integral. Lo que inició como un modelo de entable tradicional se ha transformado radicalmente, reflejando un cambio visual, organizacional y operativo profundo en todas nuestras áreas de trabajo.</p>
+                <!-- Espacio para la foto de Empresa (puedes cambiar 'img/DSC00252.JPG' por la foto que quieras) -->
+                <img src="img/DSC00252.JPG" alt="Nuestra Empresa" class="area-img">
+                <h4>Nuestra Empresa</h4>
+                <p>Conozca la trayectoria y la evolución de nuestra unidad minera desde un entable tradicional hasta una planta moderna.</p>
+                <a href="empresa.html" class="map-link">Ver sección Empresa &rarr;</a>
             </div>
-            <div class="card">
-                <h4>Visión y Misión</h4>
-                <p>Consolidarnos como referentes de la minería regional mediante la innovación tecnológica continua, la optimización de recursos y un modelo de gestión corporativa moderno y transparente.</p>
-            </div>
-            <div class="card">
-                <h4>Innovación y Tecnología</h4>
-                <p>Integramos herramientas de ingeniería de mantenimiento predictivo, análisis de criticidad y control automatizado, marcando un antes y un después en la eficiencia de nuestra planta.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- SECCIÓN: PROCESOS -->
-    <section id="procesos" style="background: #eef2f3;">
-        <h3>Nuestros Procesos Operativos</h3>
-        <div class="grid">
+            <!-- TARJETA 2: PROCESOS -->
             <div class="card">
-                <h4>Extracción y Geomecánica</h4>
-                <p>Planificación rigurosa de las labores extractivas, asegurando la estabilidad del entorno minero y un suministro de mineral constante y controlado hacia la planta de beneficio.</p>
+                <!-- Espacio para la foto de Procesos -->
+                <img src="img/DSC00252.JPG" alt="Procesos Operativos" class="area-img">
+                <h4>Procesos Operativos</h4>
+                <p>Detalle de la cadena de valor, extracción geomecánica, líneas de reducción y clasificación mineral.</p>
+                <a href="procesos.html" class="map-link">Ver sección Procesos &rarr;</a>
             </div>
+
+            <!-- TARJETA 3: TRITURACIÓN -->
             <div class="card">
+                <!-- Espacio para la foto de Trituración -->
+                <img src="img/B4.JPG" alt="Área de Trituración" class="area-img">
                 <h4>Trituración</h4>
-                <p>Sistemas de reducción de tamaño altamente optimizados. Gracias al esfuerzo y la modernización de nuestras líneas, logramos una conminución eficiente que garantiza la granulometría precisa para las siguientes etapas.</p>
+                <p>Tecnología de conminución y operación de equipos críticos como nuestra unidad secundaria B4.</p>
+                <a href="trituracion.html" class="map-link">Ver sección Trituración &rarr;</a>
             </div>
+
+            <!-- TARJETA 4: MANTENIMIENTO -->
             <div class="card">
-                <h4>Molienda y Clasificación</h4>
-                <p>Circuitos integrados por molinos y sistemas de clasificación avanzados, maximizando la liberación de partículas y asegurando un rendimiento metalúrgico de alta calidad.</p>
+                <!-- Espacio para la foto de Mantenimiento -->
+                <img src="img/B4.JPG" alt="Mantenimiento e Ingeniería" class="area-img">
+                <h4>Mantenimiento</h4>
+                <p>Estrategias de confiabilidad (RCM/TPM), planes de lubricación y seguimiento estricto de disponibilidad mecánica.</p>
+                <a href="mantenimiento.html" class="map-link">Ver sección Mantenimiento &rarr;</a>
             </div>
+
+            <!-- TARJETA 5: PERSONAL Y HSEQ -->
+            <div class="card">
+                <!-- Espacio para la foto de Personal y HSEQ -->
+                <img src="img/comunidad.jpeg" alt="Personal y Seguridad" class="area-img">
+                <h4>Personal y HSEQ</h4>
+                <p>Cultura de seguridad industrial, implementación de PETS, charlas AIC-30 y bienestar del talento humano.</p>
+                <a href="personal.html" class="map-link">Ver sección Personal y HSEQ &rarr;</a>
+            </div>
+
+            <!-- TARJETA 6: COMUNIDAD -->
+            <div class="card">
+                <!-- Espacio para la foto de Comunidad -->
+                <img src="img/comunidad.jpeg" alt="Comunidad y Entorno" class="area-img">
+                <h4>Comunidad</h4>
+                <p>Relación armónica con el entorno, iniciativas de sostenibilidad y compromiso participativo regional.</p>
+                <a href="comunidad.html" class="map-link">Ver sección Comunidad &rarr;</a>
+            </div>
+
         </div>
     </section>
 
-    <!-- SECCIÓN: MANTENIMIENTO INDUSTRIAL -->
-    <section id="mantenimiento">
-        <h3>Mantenimiento e Ingeniería de Confiabilidad</h3>
-        <div class="grid">
-            <div class="card">
-                <h4>Gestión Evolutiva de Activos</h4>
-                <p>El cambio organizacional se refleja en nuestra transición hacia metodologías de Mantenimiento Centrado en Confiabilidad (RCM) y Mantenimiento Productivo Total (TPM) para garantizar cero paradas imprevistas.</p>
-            </div>
-            <div class="card">
-                <h4>Equipo Destacado: B4</h4>
-                <img src="B4.JPG" alt="Equipo B4" class="equipo-img">
-                <h4>Unidad B4 en Operación</h4>
-                <p>Componente vital en nuestra línea de proceso. Monitoreamos constantemente sus parámetros de desgaste, lubricación y vibración bajo estrictos protocolos técnicos.</p>
-            </div>
-            <div class="card">
-                <h4>Lubricación y Predictivo</h4>
-                <p>Control riguroso de frecuencias de re-lubricación, análisis térmico de cojinetes y seguimiento exhaustivo de indicadores clave para garantizar la máxima disponibilidad operativa.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: MANEJO DE PERSONAL Y HSEQ -->
-    <section id="personal" style="background: #eef2f3;">
-        <h3>Manejo de Personal y Seguridad (HSEQ)</h3>
-        <div class="grid">
-            <div class="card">
-                <h4>Cultura de Seguridad Industrial</h4>
-                <p>Nuestra empresa ha evolucionado con el pasar de los años, transformándose desde un entable tradicional hasta convertirse en una planta tecnificada. La seguridad es nuestro valor intransable: implementamos Procedimientos Escritos de Trabajo Seguro (PETS), charlas operativas de corto intervalo (AIC-30) y un uso riguroso de EPPs.</p>
-            </div>
-            <div class="card">
-                <h4>Desarrollo del Talento Humano</h4>
-                <p>Fomentamos el trabajo en equipo, la capacitación técnica constante de nuestros operadores y mecánicos, y canales de comunicación abiertos para garantizar un clima laboral seguro y motivador.</p>
-            </div>
-            <div class="card">
-                <h4>Gestión de Riesgos y Salud Ocupacional</h4>
-                <p>Protocolos permanentes de prevención de riesgos, pausas activas, inspecciones de pre-uso de maquinaria y acompañamiento continuo en cada turno de trabajo.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: COMPROMISO COMUNITARIO CON CARRUSEL INTERACTIVO -->
-    <section id="comunidad">
-        <h3>Compromiso Comunitario y Ambiental</h3>
-        <div class="grid" style="grid-template-columns: 1fr;">
-            <div class="card" style="max-width: 800px; margin: 0 auto;">
-                <h4>Entorno, Sostenibilidad y Comunidad</h4>
-                
-                <!-- CARRUSEL DE IMÁGENES -->
-                <div class="slider-container">
-                    <img src="comunidad.jpeg" alt="Comunidad 1" class="slide active">
-                    <img src="DSC00252.JPG" alt="Entorno Minero 2" class="slide">
-                    <img src="B4.JPG" alt="Planta y Entorno 3" class="slide">
-                    
-                    <button class="slider-btn prev" onclick="changeSlide(-1)">&#10046;</button>
-                    <button class="slider-btn next" onclick="changeSlide(1)">&#10047;</button>
-                </div>
-                
-                <p>En la Mina El Gran Porvenir creemos firmemente que la minería moderna y en evolución debe coexistir en armonía con su entorno. Desarrollamos programas de gestión eficiente del agua, optimización energética y un fuerte vínculo participativo con las comunidades de la región de El Líbano.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: TRABAJA CON NOSOTROS -->
+    <!-- TRABAJA CON NOSOTROS: SECCIÓN DE EMPLEO -->
     <section id="trabaja" style="background: #eef2f3;">
         <h3>Trabaja con Nosotros</h3>
         <div style="max-width: 700px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); text-align: center;">
@@ -367,7 +288,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: CONTACTO -->
+    <!-- CONTACTO: SECCIÓN DE UBICACIÓN Y CANALES -->
     <section id="contacto">
         <h3>Contacto y Canales de Atención</h3>
         <div style="text-align: center; max-width: 650px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
@@ -391,26 +312,6 @@
     <footer>
         <p>&copy; 2026 Mina El Gran Porvenir. Todos los derechos reservados.</p>
     </footer>
-
-    <!-- SCRIPT DE JAVASCRIPT PARA EL CARRUSEL -->
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (index + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        function changeSlide(direction) {
-            showSlide(currentSlide + direction);
-        }
-
-        setInterval(() => {
-            changeSlide(1);
-        }, 4000);
-    </script>
 
 </body>
 </html>
