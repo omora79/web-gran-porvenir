@@ -8,6 +8,8 @@
         :root { --primary: #1a1a1a; --accent: #e67e22; --light: #f4f6f7; --dark-card: #2c3e50; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: var(--light); color: var(--primary); line-height: 1.6; }
+        
+        /* ENCABEZADO Y MENÚ GLOBAL */
         header { background: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
         .logo-img { height: 50px; width: auto; display: block; }
         .header-brand { display: flex; align-items: center; gap: 15px; }
@@ -15,34 +17,50 @@
         nav { display: flex; flex-wrap: wrap; gap: 8px; }
         nav a { color: white; text-decoration: none; padding: 0.3rem 0.7rem; font-weight: 600; font-size: 0.9rem; transition: color 0.3s, background 0.3s; border-radius: 4px; }
         nav a:hover { color: var(--accent); background: rgba(255,255,255,0.05); }
+        
         .hero-sub { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/DSC00252.JPG') no-repeat center center/cover; color: white; text-align: center; padding: 5rem 2rem; }
+        .hero-sub h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        
         section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
         section h3 { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: var(--primary); position: relative; }
         section h3::after { content: ''; display: block; width: 80px; height: 4px; background: var(--accent); margin: 12px auto 0 auto; }
+        
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
         .card { background: white; padding: 2.2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 5px solid var(--dark-card); }
         .card h4 { margin-bottom: 1rem; color: var(--dark-card); font-size: 1.4rem; }
+        .card p { color: #555; margin-bottom: 1rem; }
+        
+        /* ESTILOS PARA LOS CARRUSELES DE IMÁGENES */
         .slider-container { position: relative; width: 100%; height: 350px; border-radius: 8px; overflow: hidden; margin-bottom: 1.2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; }
         .slide.active { opacity: 1; }
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; font-size: 1.2rem; border-radius: 4px; z-index: 10; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; font-size: 1.2rem; border-radius: 4px; z-index: 10; transition: background 0.3s; }
         .slider-btn:hover { background: var(--accent); }
         .prev { left: 10px; } .next { right: 10px; }
+        
+        /* LISTAS DE APOYO */
+        .lista-apoyo { list-style-type: none; margin-bottom: 1.5rem; }
+        .lista-apoyo li { padding: 0.5rem 0; border-bottom: 1px solid #eee; color: #444; display: flex; align-items: center; gap: 10px; }
+        .lista-apoyo li::before { content: '✔'; color: var(--accent); font-weight: bold; }
+
         footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid #444; }
         @media (max-width: 1000px) { header { flex-direction: column; padding: 1rem; } .header-brand { margin-bottom: 15px; } nav { justify-content: center; } }
     </style>
 </head>
 <body>
+    
+    <!-- ========================================== -->
+    <!-- MENÚ GLOBAL FIJO -->
+    <!-- ========================================== -->
     <header>
         <div class="header-brand">
-            <img src="img/LOGO.png" alt="Logo" class="logo-img">
+            <img src="img/LOGO.jpeg" alt="Logo" class="logo-img">
             <h1>Mina El Gran Porvenir</h1>
         </div>
         <nav>
             <a href="index.html">Inicio</a>
             <a href="empresa.html">Empresa</a>
             <a href="procesos.html">Procesos</a>
-            <a href="trituracion.html">Trituración</a>
             <a href="mantenimiento.html">Mantenimiento</a>
             <a href="personal.html">Personal y HSEQ</a>
             <a href="Comunidad.html" style="color: var(--accent);">Comunidad y Medio ambiente</a>
@@ -50,37 +68,125 @@
             <a href="index.html#contacto">Contacto</a>
         </nav>
     </header>
+
+    <!-- ========================================== -->
+    <!-- ENCABEZADO DE LA SECCIÓN -->
+    <!-- ========================================== -->
     <div class="hero-sub">
         <h2>Compromiso Comunitario y Ambiental</h2>
-        <p>Relación armónica con el entorno, sostenibilidad y desarrollo regional.</p>
+        <p>Relación armónica con el entorno, sostenibilidad social y desarrollo regional en El Líbano.</p>
     </div>
+
+    <!-- ========================================== -->
+    <!-- CONTENIDO: TARJETAS Y GALERÍAS INDEPENDIENTES -->
+    <!-- ========================================== -->
     <section>
-        <h3>Galería de Entorno y Comunidad</h3>
+        <h3>Iniciativas, Entorno y Sostenibilidad</h3>
         <div class="grid" style="grid-template-columns: 1fr;">
-            <div class="card" style="max-width: 800px; margin: 0 auto;">
-                <h4>Sostenibilidad en El Líbano</h4>
+            
+            <!-- ========================================== -->
+            <!-- TARJETA 1: SOSTENIBILIDAD GENERAL -->
+            <!-- ========================================== -->
+            <div class="card" style="max-width: 900px; margin: 0 auto 3rem auto;">
+                <h4>Visión de Coexistencia Sostenible</h4>
+                
+                <!-- CARRUSEL 1 -->
                 <div class="slider-container">
-                    <img src="img/comunidad.jpeg" alt="Comunidad 1" class="slide active">
-                    <img src="img/DSC00252.JPG" alt="Entorno Minero 2" class="slide">
-                    <img src="img/B4.JPG" alt="Planta y Entorno 3" class="slide">
-                    <button class="slider-btn prev" onclick="changeSlide(-1)">&#10046;</button>
-                    <button class="slider-btn next" onclick="changeSlide(1)">&#10047;</button>
+                    <img src="img/comunidad.jpeg" alt="Comunidad 1" class="slide active slider1">
+                    <img src="img/DSC00252.JPG" alt="Entorno Minero 2" class="slide slider1">
+                    <img src="img/B4.JPG" alt="Planta y Entorno 3" class="slide slider1">
+                    <button class="slider-btn prev" onclick="changeSlide('slider1', -1)">&#10046;</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider1', 1)">&#10047;</button>
                 </div>
-                <p>En la Mina El Gran Porvenir creemos firmemente que la minería moderna y en evolución debe coexistir en armonía con su entorno. Desarrollamos programas de gestión eficiente del agua, optimización energética y un fuerte vínculo participativo con las comunidades locales.</p>
+                
+                <p>En la Mina El Gran Porvenir creemos firmemente que la minería moderna y en evolución debe coexistir en armonía con su entorno. Desarrollamos programas de gestión eficiente del recurso hídrico, optimización energética y un fuerte vínculo participativo con las comunidades de la región.</p>
             </div>
+
+            <!-- ========================================== -->
+            <!-- TARJETA 2: TRABAJO SOCIAL Y COMUNITARIO -->
+            <!-- ========================================== -->
+            <div class="card" style="max-width: 900px; margin: 0 auto 3rem auto;">
+                <h4>Apoyo Social y Comunitario</h4>
+                
+                <!-- CARRUSEL 2 -->
+                <div class="slider-container">
+                    <img src="img/comunidad1.jpg" alt="Apoyo Social 1" class="slide active slider2">
+                    <img src="img/comunidad.jpeg" alt="Apoyo Social 2" class="slide slider2">
+                    <img src="img/DSC00252.JPG" alt="Apoyo Social 3" class="slide slider2">
+                    <button class="slider-btn prev" onclick="changeSlide('slider2', -1)">&#10046;</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider2', 1)">&#10047;</button>
+                </div>
+
+                <p>Nuestro compromiso trasciende las puertas de la planta. Trabajamos activamente de la mano con la comunidad vecina mediante iniciativas de alto impacto social:</p>
+                
+                <ul class="lista-apoyo">
+                    <li><strong>Apoyo en Redes e Infraestructura:</strong> Asistencia técnica y colaboración comunitaria en el mantenimiento y mejora de redes de servicios básicos.</li>
+                    <li><strong>Mantenimiento Eléctrico:</strong> Soporte comunitario y asesoría técnica en instalaciones eléctricas seguras para espacios de beneficio social.</li>
+                    <li><strong>Charlas de Crecimiento y Capacitación:</strong> Espacios formativos orientados al desarrollo personal, liderazgo, seguridad y emprendimiento local.</li>
+                </ul>
+
+                <p>Construimos tejido social con hechos reales, fortaleciendo los lazos de confianza y cooperación mutua con los habitantes de nuestra zona de influencia.</p>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- TARJETA 3: GESTIÓN AMBIENTAL -->
+            <!-- ========================================== -->
+            <div class="card" style="max-width: 900px; margin: 0 auto;">
+                <h4>Gestión Ambiental Responsable</h4>
+                
+                <!-- CARRUSEL 3 -->
+                <div class="slider-container">
+                    <img src="img/DSC00252.JPG" alt="Gestión Ambiental 1" class="slide active slider3">
+                    <img src="img/comunidad.jpeg" alt="Gestión Ambiental 2" class="slide slider3">
+                    <img src="img/B4.JPG" alt="Gestión Ambiental 3" class="slide slider3">
+                    <button class="slider-btn prev" onclick="changeSlide('slider3', -1)">&#10046;</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider3', 1)">&#10047;</button>
+                </div>
+
+                <p>Operamos bajo una rigurosa conciencia ecológica, implementando prácticas que minimizan el impacto sobre el medio ambiente natural:</p>
+                
+                <ul class="lista-apoyo">
+                    <li><strong>Protección de Fuentes Hídricas:</strong> Monitoreo y control estricto para garantizar el uso eficiente y la conservación del agua en los procesos.</li>
+                    <li><strong>Manejo Adecuado de Residuos:</strong> Protocolos seguros de clasificación, almacenamiento y disposición de materiales y desechos industriales.</li>
+                    <li><strong>Reforestación y Entorno:</strong> Iniciativas orientadas a la recuperación y cuidado de las zonas verdes y el paisaje circundante a nuestra unidad minera.</li>
+                </ul>
+
+                <p>El equilibrio entre la producción industrial y la conservación ambiental es nuestra garantía para un desarrollo minero verdaderamente sostenible.</p>
+            </div>
+
         </div>
     </section>
-    <footer><p>&copy; 2026 Mina El Gran Porvenir. Todos los derechos reservados.</p></footer>
+
+    <!-- ========================================== -->
+    <!-- PIE DE PÁGINA -->
+    <!-- ========================================== -->
+    <footer>
+        <p>&copy; 2026 Mina El Gran Porvenir. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- SCRIPT DE JAVASCRIPT PARA LOS TRES CARRUSELES -->
+    <!-- ========================================== -->
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (index + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
+        function changeSlide(sliderClass, direction) {
+            const slides = document.querySelectorAll('.' + sliderClass);
+            let activeIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            slides[activeIndex].classList.remove('active');
+            
+            let newIndex = (activeIndex + direction + slides.length) % slides.length;
+            slides[newIndex].classList.add('active');
         }
-        function changeSlide(direction) { showSlide(currentSlide + direction); }
-        setInterval(() => { changeSlide(1); }, 4000);
+
+        // Automatización de rotación independiente para los tres carruseles
+        setInterval(() => {
+            ['slider1', 'slider2', 'slider3'].forEach(sliderClass => {
+                const slides = document.querySelectorAll('.' + sliderClass);
+                let activeIndex = Array.from(slides).findIndex(s => s.classList.contains('active'));
+                slides[activeIndex].classList.remove('active');
+                slides[(activeIndex + 1) % slides.length].classList.add('active');
+            });
+        }, 5000);
     </script>
+
 </body>
 </html>
