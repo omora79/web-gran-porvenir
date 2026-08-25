@@ -4,29 +4,202 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mantenimiento e Ingeniería | Mina El Gran Porvenir</title>
+    
+    <!-- ========================================== -->
+    <!-- SEGMENTO DE ESTILOS CSS (Diseño y Carrusel) -->
+    <!-- ========================================== -->
     <style>
-        :root { --primary: #1a1a1a; --accent: #e67e22; --light: #f4f6f7; --dark-card: #2c3e50; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--light); color: var(--primary); line-height: 1.6; }
-        header { background: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
-        .logo-img { height: 50px; width: auto; display: block; }
-        .header-brand { display: flex; align-items: center; gap: 15px; }
-        header h1 { font-size: 1.4rem; letter-spacing: 1px; }
-        nav { display: flex; flex-wrap: wrap; gap: 8px; }
-        nav a { color: white; text-decoration: none; padding: 0.3rem 0.7rem; font-weight: 600; font-size: 0.9rem; transition: color 0.3s, background 0.3s; border-radius: 4px; }
-        nav a:hover { color: var(--accent); background: rgba(255,255,255,0.05); }
-        .hero-sub { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/DSC00252.JPG') no-repeat center center/cover; color: white; text-align: center; padding: 5rem 2rem; }
-        section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
-        section h3 { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: var(--primary); position: relative; }
-        section h3::after { content: ''; display: block; width: 80px; height: 4px; background: var(--accent); margin: 12px auto 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
-        .card { background: white; padding: 2.2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 5px solid var(--dark-card); }
-        .card h4 { margin-bottom: 1rem; color: var(--dark-card); font-size: 1.4rem; }
-        footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid #444; }
-        @media (max-width: 1000px) { header { flex-direction: column; padding: 1rem; } .header-brand { margin-bottom: 15px; } nav { justify-content: center; } }
+        :root { 
+            --primary: #1a1a1a; 
+            --accent: #e67e22; 
+            --light: #f4f6f7; 
+            --dark-card: #2c3e50; 
+        }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Segoe UI', sans-serif; 
+        }
+        body { 
+            background-color: var(--light); 
+            color: var(--primary); 
+            line-height: 1.6; 
+        }
+        
+        /* ENCABEZADO Y MENÚ GLOBAL */
+        header { 
+            background: var(--primary); 
+            color: white; 
+            padding: 1rem 2rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 4px solid var(--accent); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .logo-img { 
+            height: 50px; 
+            width: auto; 
+            display: block; 
+        }
+        .header-brand { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+        }
+        header h1 { 
+            font-size: 1.4rem; 
+            letter-spacing: 1px; 
+        }
+        nav { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 8px; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 0.3rem 0.7rem; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            transition: color 0.3s, background 0.3s; 
+            border-radius: 4px; 
+        }
+        nav a:hover { 
+            color: var(--accent); 
+            background: rgba(255,255,255,0.05); 
+        }
+        
+        /* PORTADA INTERNA DE LA SECCIÓN */
+        .hero-sub { 
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/DSC00252.JPG') no-repeat center center/cover; 
+            color: white; 
+            text-align: center; 
+            padding: 5rem 2rem; 
+        }
+        .hero-sub h2 { 
+            font-size: 2.5rem; 
+            margin-bottom: 1rem; 
+        }
+        
+        /* CONTENEDORES Y TARJETAS */
+        section { 
+            padding: 4rem 2rem; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        section h3 { 
+            text-align: center; 
+            font-size: 2.2rem; 
+            margin-bottom: 3rem; 
+            color: var(--primary); 
+            position: relative; 
+        }
+        section h3::after { 
+            content: ''; 
+            display: block; 
+            width: 80px; 
+            height: 4px; 
+            background: var(--accent); 
+            margin: 12px auto 0 auto; 
+        }
+        
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 2.5rem; 
+        }
+        .card { 
+            background: white; 
+            padding: 2.2rem; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06); 
+            border-top: 5px solid var(--dark-card); 
+        }
+        .card h4 { 
+            margin-bottom: 1rem; 
+            color: var(--dark-card); 
+            font-size: 1.4rem; 
+        }
+        .card p { 
+            color: #555; 
+        }
+        
+        /* ESTILOS PARA EL CARRUSEL DE IMÁGENES (Diseño optimizado) */
+        .slider-container { 
+            position: relative; 
+            width: 85%; 
+            height: 480px; 
+            margin: 0 auto; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            background-color: #000; /* Fondo negro elegante para laterales */
+        }
+        .slide { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; /* Evita que la foto se estire o recorte */
+            opacity: 0; 
+            transition: opacity 1s ease-in-out; 
+        }
+        .slide.active { 
+            opacity: 1; 
+        }
+        .slider-btn { 
+            position: absolute; 
+            top: 50%; 
+            transform: translateY(-50%); 
+            background: rgba(0, 0, 0, 0.5); 
+            color: white; 
+            border: none; 
+            padding: 10px 15px; 
+            cursor: pointer; 
+            font-size: 1.2rem; 
+            border-radius: 4px; 
+            z-index: 10; 
+            transition: background 0.3s; 
+        }
+        .slider-btn:hover { 
+            background: var(--accent); 
+        }
+        .prev { left: 10px; } 
+        .next { right: 10px; }
+
+        /* PIE DE PÁGINA */
+        footer { 
+            background: var(--primary); 
+            color: white; 
+            text-align: center; 
+            padding: 2rem; 
+            margin-top: 4rem; 
+            border-top: 1px solid #444; 
+        }
+        @media (max-width: 1000px) { 
+            header { 
+                flex-direction: column; 
+                padding: 1rem; 
+            } 
+            .header-brand { 
+                margin-bottom: 15px; 
+            } 
+            nav { 
+                justify-content: center; 
+            } 
+        }
     </style>
 </head>
 <body>
+    
+    <!-- ========================================== -->
+    <!-- SEGMENTO 1: MENÚ GLOBAL FIJO               -->
+    <!-- ========================================== -->
     <header>
         <div class="header-brand">
             <img src="img/LOGO.jpeg" alt="Logo" class="logo-img">
@@ -43,10 +216,18 @@
             <a href="index.html#contacto">Contacto</a>
         </nav>
     </header>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 2: ENCABEZADO DE LA SECCIÓN (HERO) -->
+    <!-- ========================================== -->
     <div class="hero-sub">
         <h2>Mantenimiento e Ingeniería de Confiabilidad</h2>
         <p>Gestión de activos, disponibilidad mecánica y estrategias preventivas en planta.</p>
     </div>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 3: TARJETAS DE ESTRATEGIAS        -->
+    <!-- ========================================== -->
     <section>
         <h3>Estrategias de Mantenimiento</h3>
         <div class="grid">
@@ -59,11 +240,65 @@
                 <p>Control riguroso de frecuencias de re-lubricación, análisis térmico de cojinetes y seguimiento exhaustivo de indicadores clave para garantizar la máxima vida útil de los componentes.</p>
             </div>
             <div class="card">
-                <h4>Disponibilidad Mecánica</h4>
+                <h4>Disponibilidad Mecánica Y Eléctrica</h4>
                 <p>Seguimiento continuo de tiempos de respuesta, control de repuestos críticos y planes de acción orientados a la mejora del rendimiento general de la planta.</p>
             </div>
         </div>
     </section>
-    <footer><p>&copy; 2026 Mina El Gran Porvenir Colombia. Todos los derechos reservados.</p></footer>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 4: GALERÍA Y CARRUSEL DE MANTENIMIENTO -->
+    <!-- ========================================== -->
+    <section style="padding-top: 0;">
+        <h3>Registro Visual de Mantenimiento e Ingeniería</h3>
+        <div class="card" style="max-width: 900px; margin: 0 auto;">
+            <h4 style="text-align: center; margin-bottom: 1.5rem;">Intervenciones, Lubricación y Equipos</h4>
+            
+            <!-- Carrusel de imágenes de Mantenimiento -->
+            <div class="slider-container">
+                <img src="img/mantenimiento1.jpeg" alt="Mantenimiento 1" class="slide active slider-mant">
+                <img src="img/mantenimiento2.jpg" alt="Mantenimiento 2" class="slide slider-mant">
+                <img src="img/mantenimiento3.jpg" alt="Mantenimiento 3" class="slide slider-mant">
+                <img src="img/mantenimiento4.jpeg" alt="Mantenimiento 4" class="slide slider-mant">
+                <img src="img/B4.JPG" alt="Mantenimiento 5" class="slide slider-mant">
+                <button class="slider-btn prev" onclick="changeSlide('slider-mant', -1)">&#10046;</button>
+                <button class="slider-btn next" onclick="changeSlide('slider-mant', 1)">&#10047;</button>
+            </div>
+            
+            <p style="margin-top: 1.5rem; text-align: center; color: #555;">
+                Seguimiento técnico riguroso en los frentes de trabajo y planta de beneficio para maximizar la confiabilidad operacional.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 5: PIE DE PÁGINA (FOOTER)         -->
+    <!-- ========================================== -->
+    <footer>
+        <p>&copy; 2026 Mina El Gran Porvenir Colombia. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 6: SCRIPT DE JAVASCRIPT PARA EL CARRUSEL -->
+    <!-- ========================================== -->
+    <script>
+        function changeSlide(sliderClass, direction) {
+            const slides = document.querySelectorAll('.' + sliderClass);
+            let activeIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            slides[activeIndex].classList.remove('active');
+            
+            let newIndex = (activeIndex + direction + slides.length) % slides.length;
+            slides[newIndex].classList.add('active');
+        }
+
+        // Automatización de rotación cada 5 segundos
+        setInterval(() => {
+            const slides = document.querySelectorAll('.slider-mant');
+            let activeIndex = Array.from(slides).findIndex(s => s.classList.contains('active'));
+            slides[activeIndex].classList.remove('active');
+            slides[(activeIndex + 1) % slides.length].classList.add('active');
+        }, 5000);
+    </script>
+
 </body>
 </html>

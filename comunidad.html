@@ -4,53 +4,223 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comunidad y Entorno | Mina El Gran Porvenir</title>
+    
+    <!-- ========================================== -->
+    <!-- SEGMENTO DE ESTILOS CSS (Diseño y Carruseles) -->
+    <!-- ========================================== -->
     <style>
-        :root { --primary: #1a1a1a; --accent: #e67e22; --light: #f4f6f7; --dark-card: #2c3e50; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--light); color: var(--primary); line-height: 1.6; }
+        :root { 
+            --primary: #1a1a1a; 
+            --accent: #e67e22; 
+            --light: #f4f6f7; 
+            --dark-card: #2c3e50; 
+        }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Segoe UI', sans-serif; 
+        }
+        body { 
+            background-color: var(--light); 
+            color: var(--primary); 
+            line-height: 1.6; 
+        }
         
         /* ENCABEZADO Y MENÚ GLOBAL */
-        header { background: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
-        .logo-img { height: 50px; width: auto; display: block; }
-        .header-brand { display: flex; align-items: center; gap: 15px; }
-        header h1 { font-size: 1.4rem; letter-spacing: 1px; }
-        nav { display: flex; flex-wrap: wrap; gap: 8px; }
-        nav a { color: white; text-decoration: none; padding: 0.3rem 0.7rem; font-weight: 600; font-size: 0.9rem; transition: color 0.3s, background 0.3s; border-radius: 4px; }
-        nav a:hover { color: var(--accent); background: rgba(255,255,255,0.05); }
+        header { 
+            background: var(--primary); 
+            color: white; 
+            padding: 1rem 2rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 4px solid var(--accent); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .logo-img { 
+            height: 50px; 
+            width: auto; 
+            display: block; 
+        }
+        .header-brand { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+        }
+        header h1 { 
+            font-size: 1.4rem; 
+            letter-spacing: 1px; 
+        }
+        nav { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 8px; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 0.3rem 0.7rem; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            transition: color 0.3s, background 0.3s; 
+            border-radius: 4px; 
+        }
+        nav a:hover { 
+            color: var(--accent); 
+            background: rgba(255,255,255,0.05); 
+        }
         
-        .hero-sub { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/DSC00252.JPG') no-repeat center center/cover; color: white; text-align: center; padding: 5rem 2rem; }
-        .hero-sub h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        /* PORTADA INTERNA DE LA SECCIÓN */
+        .hero-sub { 
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/DSC00252.JPG') no-repeat center center/cover; 
+            color: white; 
+            text-align: center; 
+            padding: 5rem 2rem; 
+        }
+        .hero-sub h2 { 
+            font-size: 2.5rem; 
+            margin-bottom: 1rem; 
+        }
         
-        section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
-        section h3 { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: var(--primary); position: relative; }
-        section h3::after { content: ''; display: block; width: 80px; height: 4px; background: var(--accent); margin: 12px auto 0 auto; }
+        /* CONTENEDORES Y TARJETAS */
+        section { 
+            padding: 4rem 2rem; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        section h3 { 
+            text-align: center; 
+            font-size: 2.2rem; 
+            margin-bottom: 3rem; 
+            color: var(--primary); 
+            position: relative; 
+        }
+        section h3::after { 
+            content: ''; 
+            display: block; 
+            width: 80px; 
+            height: 4px; 
+            background: var(--accent); 
+            margin: 12px auto 0 auto; 
+        }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
-        .card { background: white; padding: 2.2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 5px solid var(--dark-card); }
-        .card h4 { margin-bottom: 1rem; color: var(--dark-card); font-size: 1.4rem; }
-        .card p { color: #555; margin-bottom: 1rem; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 2.5rem; 
+        }
+        .card { 
+            background: white; 
+            padding: 2.2rem; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06); 
+            border-top: 5px solid var(--dark-card); 
+        }
+        .card h4 { 
+            margin-bottom: 1rem; 
+            color: var(--dark-card); 
+            font-size: 1.4rem; 
+        }
+        .card p { 
+            color: #555; 
+            margin-bottom: 1rem; 
+        }
         
-        /* ESTILOS PARA LOS CARRUSELES DE IMÁGENES */
-        .slider-container { position: relative; width: 100%; height: 350px; border-radius: 8px; overflow: hidden; margin-bottom: 1.2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; }
-        .slide.active { opacity: 1; }
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; font-size: 1.2rem; border-radius: 4px; z-index: 10; transition: background 0.3s; }
-        .slider-btn:hover { background: var(--accent); }
-        .prev { left: 10px; } .next { right: 10px; }
+        /* ESTILOS PARA LOS CARRUSELES DE IMÁGENES (Con fondo negro y contain) */
+        .slider-container { 
+            position: relative; 
+            width: 85%; /* <--- Esto reduce el ancho horizontal un tris para que no quede pegado a los bords */
+            height: 480px; /* <--- Esto lo amplía hacia abajo para darle mejor altura a las fotos verticales */
+            margin: 0 auto 1.2rem auto; /* <--- Esto centra automáticamente el carrusel en la tarjeta */
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            background-color: #000; /* Fondo oscuro para los laterales */
+        }
+        
+        .slide { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; /* <--- Evita que la foto se recorte o estire de más */
+            opacity: 0; 
+            transition: opacity 1s ease-in-out; 
+        }
+        .slide.active { 
+            opacity: 1; 
+        }
+        .slider-btn { 
+            position: absolute; 
+            top: 50%; 
+            transform: translateY(-50%); 
+            background: rgba(0, 0, 0, 0.5); 
+            color: white; 
+            border: none; 
+            padding: 10px 15px; 
+            cursor: pointer; 
+            font-size: 1.2rem; 
+            border-radius: 4px; 
+            z-index: 10; 
+            transition: background 0.3s; 
+        }
+        .slider-btn:hover { 
+            background: var(--accent); 
+        }
+        .prev { left: 10px; } 
+        .next { right: 10px; }
         
         /* LISTAS DE APOYO */
-        .lista-apoyo { list-style-type: none; margin-bottom: 1.5rem; }
-        .lista-apoyo li { padding: 0.5rem 0; border-bottom: 1px solid #eee; color: #444; display: flex; align-items: center; gap: 10px; }
-        .lista-apoyo li::before { content: '✔'; color: var(--accent); font-weight: bold; }
+        .lista-apoyo { 
+            list-style-type: none; 
+            margin-bottom: 1.5rem; 
+        }
+        .lista-apoyo li { 
+            padding: 0.5rem 0; 
+            border-bottom: 1px solid #eee; 
+            color: #444; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        .lista-apoyo li::before { 
+            content: '✔'; 
+            color: var(--accent); 
+            font-weight: bold; 
+        }
 
-        footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid #444; }
-        @media (max-width: 1000px) { header { flex-direction: column; padding: 1rem; } .header-brand { margin-bottom: 15px; } nav { justify-content: center; } }
+        /* PIE DE PÁGINA */
+        footer { 
+            background: var(--primary); 
+            color: white; 
+            text-align: center; 
+            padding: 2rem; 
+            margin-top: 4rem; 
+            border-top: 1px solid #444; 
+        }
+        @media (max-width: 1000px) { 
+            header { 
+                flex-direction: column; 
+                padding: 1rem; 
+            } 
+            .header-brand { 
+                margin-bottom: 15px; 
+            } 
+            nav { 
+                justify-content: center; 
+            } 
+        }
     </style>
 </head>
 <body>
     
     <!-- ========================================== -->
-    <!-- MENÚ GLOBAL FIJO -->
+    <!-- SEGMENTO 1: MENÚ GLOBAL FIJO               -->
+    <!-- (Navegación principal compartida del sitio)-->
     <!-- ========================================== -->
     <header>
         <div class="header-brand">
@@ -63,14 +233,15 @@
             <a href="procesos.html">Procesos</a>
             <a href="mantenimiento.html">Mantenimiento</a>
             <a href="personal.html">Personal y HSEQ</a>
-            <a href="Comunidad.html" style="color: var(--accent);">Comunidad y Medio ambiente</a>
+            <a href="comunidad.html" style="color: var(--accent);">Comunidad y Medio ambiente</a>
             <a href="index.html#trabaja">Empleo</a>
             <a href="index.html#contacto">Contacto</a>
         </nav>
     </header>
 
     <!-- ========================================== -->
-    <!-- ENCABEZADO DE LA SECCIÓN -->
+    <!-- SEGMENTO 2: ENCABEZADO DE LA SECCIÓN (HERO) -->
+    <!-- (Portada específica de Comunidad y Entorno)-->
     <!-- ========================================== -->
     <div class="hero-sub">
         <h2>Compromiso Comunitario y Ambiental</h2>
@@ -78,23 +249,22 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- CONTENIDO: TARJETAS Y GALERÍAS INDEPENDIENTES -->
+    <!-- SEGMENTO 3: CONTENIDO DE TARJETAS Y CARRUSELES -->
     <!-- ========================================== -->
     <section>
         <h3>Iniciativas, Entorno y Sostenibilidad</h3>
         <div class="grid" style="grid-template-columns: 1fr;">
             
-            <!-- ========================================== -->
-            <!-- TARJETA 1: SOSTENIBILIDAD GENERAL -->
-            <!-- ========================================== -->
+            <!-- TARJETA 1: SOSTENIBILIDAD GENERAL Y CARRUSEL 1 -->
             <div class="card" style="max-width: 900px; margin: 0 auto 3rem auto;">
                 <h4>Visión de Coexistencia Sostenible</h4>
                 
-                <!-- CARRUSEL 1 -->
+                <!-- Carrusel 1 -->
                 <div class="slider-container">
-                    <img src="img/comunidad.jpeg" alt="Comunidad 1" class="slide active slider1">
-                    <img src="img/DSC00252.JPG" alt="Entorno Minero 2" class="slide slider1">
-                    <img src="img/B4.JPG" alt="Planta y Entorno 3" class="slide slider1">
+                    <img src="img/ambiental1.jpeg" alt="Comunidad 1" class="slide active slider1">
+                    <img src="img/ambiental2.jpeg" alt="Entorno Minero 2" class="slide slider1">
+                    <img src="img/ambiental3.jpeg" alt="Planta y Entorno 3" class="slide slider1">
+                    <img src="img/ambiental4.jpeg" alt="Planta y Entorno 4" class="slide slider1">
                     <button class="slider-btn prev" onclick="changeSlide('slider1', -1)">&#10046;</button>
                     <button class="slider-btn next" onclick="changeSlide('slider1', 1)">&#10047;</button>
                 </div>
@@ -102,13 +272,11 @@
                 <p>En la Mina El Gran Porvenir creemos firmemente que la minería moderna y en evolución debe coexistir en armonía con su entorno. Desarrollamos programas de gestión eficiente del recurso hídrico, optimización energética y un fuerte vínculo participativo con las comunidades de la región.</p>
             </div>
 
-            <!-- ========================================== -->
-            <!-- TARJETA 2: TRABAJO SOCIAL Y COMUNITARIO -->
-            <!-- ========================================== -->
+            <!-- TARJETA 2: TRABAJO SOCIAL Y CARRUSEL 2 -->
             <div class="card" style="max-width: 900px; margin: 0 auto 3rem auto;">
                 <h4>Apoyo Social y Comunitario</h4>
                 
-                <!-- CARRUSEL 2 -->
+                <!-- Carrusel 2 -->
                 <div class="slider-container">
                     <img src="img/comunidad1.jpg" alt="Apoyo Social 1" class="slide active slider2">
                     <img src="img/comunidad.jpeg" alt="Apoyo Social 2" class="slide slider2">
@@ -128,13 +296,11 @@
                 <p>Construimos tejido social con hechos reales, fortaleciendo los lazos de confianza y cooperación mutua con los habitantes de nuestra zona de influencia.</p>
             </div>
 
-            <!-- ========================================== -->
-            <!-- TARJETA 3: GESTIÓN AMBIENTAL -->
-            <!-- ========================================== -->
+            <!-- TARJETA 3: GESTIÓN AMBIENTAL Y CARRUSEL 3 -->
             <div class="card" style="max-width: 900px; margin: 0 auto;">
                 <h4>Gestión Ambiental Responsable</h4>
                 
-                <!-- CARRUSEL 3 -->
+                <!-- Carrusel 3 -->
                 <div class="slider-container">
                     <img src="img/DSC00252.JPG" alt="Gestión Ambiental 1" class="slide active slider3">
                     <img src="img/comunidad.jpeg" alt="Gestión Ambiental 2" class="slide slider3">
@@ -158,14 +324,15 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- PIE DE PÁGINA -->
+    <!-- SEGMENTO 4: PIE DE PÁGINA (FOOTER)         -->
     <!-- ========================================== -->
     <footer>
-        <p>&copy;  2026 Mina El Gran Porvenir Colombia. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Mina El Gran Porvenir Colombia. Todos los derechos reservados.</p>
     </footer>
 
     <!-- ========================================== -->
-    <!-- SCRIPT DE JAVASCRIPT PARA LOS TRES CARRUSELES -->
+    <!-- SEGMENTO 5: SCRIPT DE JAVASCRIPT PARA LOS CARRUSELES -->
+    <!-- (Controla el cambio manual y automático de las fotos) -->
     <!-- ========================================== -->
     <script>
         function changeSlide(sliderClass, direction) {
