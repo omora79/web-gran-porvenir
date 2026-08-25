@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mina El Gran Porvenir | El Líbano, Tolima</title>
+    
+    <!-- ========================================== -->
+    <!-- SEGMENTO DE ESTILOS CSS (Diseño y Colores) -->
+    <!-- ========================================== -->
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #e67e22;
+            --light: #f4f6f7;
+            --gray: #7f8c8d;
+            --dark-card: #2c3e50;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--light);
+            color: var(--primary);
+            line-height: 1.6;
+        }
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        header h1 {
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.3rem 0.7rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s, background 0.3s;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: var(--accent);
+            background: rgba(255,255,255,0.05);
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/DSC00252.JPG') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 7rem 2rem;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            color: #dcdde1;
+        }
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: #d35400;
+        }
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+        section h3::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 12px auto 0 auto;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        .card {
+            background: white;
+            padding: 2.2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-top: 5px solid var(--dark-card);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h4 {
+            margin-bottom: 1rem;
+            color: var(--dark-card);
+            font-size: 1.4rem;
+        }
+        .card p {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        .area-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+        }
+        .map-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+        .map-link:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 4rem;
+            border-top: 1px solid #444;
+        }
+        @media (max-width: 1000px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .header-brand {
+                margin-bottom: 15px;
+            }
+            nav {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 1: ENCABEZADO Y MENÚ DE NAVEGACIÓN -->
+    <!-- ========================================== -->
+    <header>
+        <div class="header-brand">
+            <img src="img/LOGO.jpeg" alt="Logo Mina El Gran Porvenir" class="logo-img">
+            <h1>Mina El Gran Porvenir</h1>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="empresa.html">Empresa</a>
+            <a href="extraccion.html">Extracción</a>
+            <a href="procesos.html">Procesos</a>
+            <a href="mantenimiento.html">Mantenimiento</a>
+            <a href="personal.html">Personal y HSEQ</a>
+            <a href="comunidad.html">Comunidad y Medio ambiente</a>
+            <a href="#trabaja">Empleo</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 2: PORTADA PRINCIPAL (HERO)       -->
+    <!-- ========================================== -->
+    <div class="hero" id="inicio">
+        <h2>Minería Responsable, Confiable y con Futuro</h2>
+        <p>Operando desde el corazón de El Líbano, Tolima. Impulsando el desarrollo industrial con altos estándares de ingeniería, seguridad operativa y compromiso social.</p>
+        <a href="extraccion.html" class="btn">Conozca Nuestras Operaciones</a>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 3: CUADRÍCULA DE ÁREAS OPERATIVAS -->
+    <!-- ========================================== -->
+    <section>
+        <h3>Nuestras Áreas Operativas e Institucionales</h3>
+        <div class="grid">
+            
+            <!-- Tarjeta: Empresa -->
+            <div class="card">
+                <img src="img/empresa1.png" alt="Nuestra Empresa" class="area-img">
+                <h4>Nuestra Empresa</h4>
+                <p>Conozca la trayectoria y la evolución de nuestra unidad minera desde un entable tradicional hasta una planta moderna.</p>
+                <a href="empresa.html" class="map-link">Ver sección Empresa &rarr;</a>
+            </div>
+
+            <!-- Tarjeta: Extracción -->
+            <div class="card">
+                <img src="img/extraccion.jpg" alt="Área de Extracción" class="area-img">
+                <h4>Extracción</h4>
+                <p>Operaciones de arranque, ciclo de minería subterránea, control geomecánico y gestión de seguridad en frentes de explotación.</p>
+                <a href="extraccion.html" class="map-link">Ver sección Extracción &rarr;</a>
+            </div>
+
+            <!-- Tarjeta: Procesos -->
+            <div class="card">
+                <img src="img/DSC00252.JPG" alt="Procesos Operativos" class="area-img">
+                <h4>Procesos</h4>
+                <p>Tratamiento físico del mineral, circuitos de reducción de tamaño y separación metalúrgica en planta de beneficio.</p>
+                <a href="procesos.html" class="map-link">Ver sección Procesos &rarr;</a>
+            </div>
+
+            <!-- Tarjeta: Trituración -->
+            <div class="card">
+                <img src="img/B4.JPG" alt="Área de Trituración" class="area-img">
+                <h4>Trituración</h4>
+                <p>La etapa de trituración constituye el primer gran eslabón en el tratamiento físico del mineral extraído, permitiendo adecuar la granulometría exacta para optimizar la molienda mediante una <strong>reducción de tamaño</strong> eficiente.</p>
+                <a href="trituracion.html" class="map-link">Ver sección Trituración &rarr;</a>
+            </div>
+
+            <!-- Tarjeta: Mantenimiento -->
+            <div class="card">
+                <img src="img/mantenimiento1.jpeg" alt="Mantenimiento e Ingeniería" class="area-img">
+                <h4>Mantenimiento</h4>
+                <p>Estrategias de confiabilidad (RCM/TPM), planes de lubricación y seguimiento estricto de disponibilidad mecánica y eléctrica.</p>
+                <a href="mantenimiento.html" class="map-link">Ver sección Mantenimiento &rarr;</a>
+            </div>
+
+            <!-- Tarjeta: Personal y HSEQ -->
+            <div class="card">
+                <img src="img/comunidad.jpeg" alt="Personal y Seguridad" class="area-img">
+                <h4>Personal y HSEQ</h4>
+                <p>Cultura de seguridad industrial, implementación de PETS, charlas AIC-5 y bienestar del talento humano.</p>
+                <a href="personal.html" class="map-link">Ver sección Personal y HSEQ &rarr;</a>
+            </div>
+
+            <!-- Tarjeta: Comunidad -->
+            <div class="card">
+                <img src="img/comunidad1.jpg" alt="Comunidad y Entorno" class="area-img">
+                <h4>Comunidad y Medio ambiente</h4>
+                <p>Relación armónica con el entorno, iniciativas de sostenibilidad y compromiso participativo regional.</p>
+                <a href="comunidad.html" class="map-link">Ver sección Comunidad &rarr;</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 4: SECCIÓN DE EMPLEO              -->
+    <!-- ========================================== -->
+    <section id="trabaja" style="background: #eef2f3;">
+        <h3>Trabaja con Nosotros</h3>
+        <div style="max-width: 700px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); text-align: center;">
+            <h4 style="color: var(--dark-card); margin-bottom: 1rem; font-size: 1.4rem;">¡Únete a nuestro equipo en evolución!</h4>
+            <p style="margin-bottom: 1.5rem; color: #555;">Si te interesa nuestro proyecto minero, te apasiona este campo o tu experiencia se relaciona con nuestra actividad, envíanos tu hoja de vida y haz parte de nuestro equipo.</p>
+            <a href="mailto:contratacionmgpl@gmail.com?subject=Hoja%20de%20Vida%20-%20[Tu%20Nombre%20y%20Apellido]&body=Hola,%20adjunto%20mi%20hoja%20de%20vida%20para%20participar%20en%20las%20convocatorias%20de%20la%20Mina%20El%20Gran%20Porvenir." class="btn">
+                Enviar Hoja de Vida por Correo
+            </a>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 5: CONTACTO Y CANALES DE ATENCIÓN -->
+    <!-- ========================================== -->
+    <section id="contacto">
+        <h3>Contacto y Canales de Atención</h3>
+        <div style="max-width: 700px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+            <p style="text-align: center; color: #555; margin-bottom: 2rem;">Estamos ubicados estratégicamente para atender sus requerimientos industriales y comerciales.</p>
+            
+            <!-- Contenedor ordenado de las ubicaciones y datos -->
+            <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2rem; color: #333; font-size: 0.95rem;">
+                
+                <!-- Dirección 1 -->
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                    <span style="font-size: 1.2rem;">📍</span>
+                    <div>
+                        <strong>Ubicación Minera:</strong> El Líbano, Tolima, Colombia
+                        <a href="https://earth.google.com/web/search/El+L%C3%ADbano,+Tolima,+Colombia" target="_blank" class="map-link" style="display: block; font-size: 0.85rem;">(Ver en Google Earth)</a>
+                    </div>
+                </div>
+
+                <!-- Dirección 2 (Oficina El Líbano) -->
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                    <span style="font-size: 1.2rem;">📍</span>
+                    <div>
+                        <strong>Oficina El Líbano:</strong> Cll 4 # 6 - 35
+                        <a href="https://earth.google.com/web/search/Calle+4+%23+6-35,+Libano,+L%c3%adbano,+Tolima,+Colombia/@4.921861,-75.06076,1571.17053725a,841.74777862d,35y,0h,0t,0r/data=Cp8BGnESawokMHg4ZTQ3NTVkN2Q3MzUwMWMzOjB4NzA5YjIyZDZlYjk1MzczGdjUeVT8rxNAIes56X3jw1LAKjFDYWxsZSA0ICMgNi0zNSwgTGliYW5vLCBMw61iYW5vLCBUb2xpbWEsIENvbG9tYmlhGAIgASImCiQJV6OfYpMpD0ARuqRLcpLeDkAZStIoeYjbUsAhvWpy3BbgUsBCAggBOgMKATBCAggASg0I____________ARAA" target="_blank" class="map-link" style="display: block; font-size: 0.85rem;">(Ver en Google Earth)</a>
+                    </div>
+                </div>
+
+                <!-- Dirección 3 (Oficina Medellín) -->
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                    <span style="font-size: 1.2rem;">📍</span>
+                    <div>
+                        <strong>Oficina Medellín:</strong> Cll 34 # 43 - 66 of 1033 (Antioquia)
+                        <a href="https://earth.google.com/web/search/Calle+34+%2343-66,+San+diego,+Medell%c3%adn,+Antioquia/@6.23518915,-75.5692046,1482.84141489a,394.78544771d,35y,0h,0t,0r/data=CiwiJgokCZ-Vg86TKQ9AEXy0VcuR3g5AGVDF4P4321LAIbt3ulZn4FLAQgIIAToDCgEwQgIIAEoNCP___________wEQAA" target="_blank" class="map-link" style="display: block; font-size: 0.85rem;">(Ver en Google Earth)</a>
+                    </div>
+                </div>
+
+                <!-- Teléfonos y Correo -->
+                <div style="display: flex; align-items: flex-start; gap: 10px; margin-top: 0.5rem;">
+                    <span style="font-size: 1.2rem;">📞</span>
+                    <div>
+                        <strong>Línea de atención y contactos:</strong> +576042629345
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: flex-start; gap: 10px;">
+                    <span style="font-size: 1.2rem;">✉️</span>
+                    <div>
+                        <strong>Correo Electrónico:</strong> notificaciones@minagpl.com
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Botón de Enlace Directo a WhatsApp (Centrado) -->
+            <div style="text-align: center;">
+                <a href="https://wa.me/573000000000" target="_blank" class="btn" style="background: #25d366; display: inline-block;">Escribir por WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 6: PIE DE PÁGINA (FOOTER)         -->
+    <!-- ========================================== -->
+    <footer>
+        <p>&copy; 2026 Mina El Gran Porvenir Colombia. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
