@@ -169,7 +169,6 @@
         .slide.active {
             opacity: 1;
         }
-        /* Estilo para el texto superpuesto de "Referencia Operativa" */
         .img-overlay-text {
             position: absolute;
             top: 50%;
@@ -207,26 +206,34 @@
         .prev { left: 15px; }
         .next { right: 15px; }
 
-        /* BOTONERA INFERIOR LIMPIA (UN SOLO BOTÓN HACIA MOLIENDA) */
+        /* BOTONERA INFERIOR EQUILIBRADA (ESTÁNDAR) */
         .process-nav {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
             margin-top: 2rem;
         }
         .btn-process {
-            background: var(--accent);
+            background: var(--dark-card);
             color: white;
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 1.8rem;
             border-radius: 4px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: background 0.3s, transform 0.2s;
             display: inline-block;
         }
         .btn-process:hover {
-            background: #d35400;
+            background: var(--accent);
             transform: translateY(-2px);
+        }
+        .btn-process.main {
+            background: var(--accent);
+        }
+        .btn-process.main:hover {
+            background: #d35400;
         }
 
         footer {
@@ -253,9 +260,6 @@
 </head>
 <body>
 
-    <!-- ========================================== -->
-    <!-- SEGMENTO 1: ENCABEZADO Y MENÚ DE NAVEGACIÓN -->
-    <!-- ========================================== -->
     <header>
         <div class="header-brand">
             <img src="img/LOGO.jpeg" alt="Logo Mina El Gran Porvenir" class="logo-img">
@@ -273,17 +277,11 @@
         </nav>
     </header>
 
-    <!-- ========================================== -->
-    <!-- SEGMENTO 2: PORTADA SECUNDARIA (HERO)      -->
-    <!-- ========================================== -->
     <div class="hero-sub">
         <h2>Proceso de Trituración Industrial</h2>
         <p>Tecnología, reducción eficiente de tamaño y operación de equipos críticos en planta.</p>
     </div>
 
-    <!-- ========================================== -->
-    <!-- SEGMENTO 3: CONTENIDO Y GALERÍA SLIDER (5) -->
-    <!-- ========================================== -->
     <section>
         <h3>Proceso, Evolución y Equipos de Trituración</h3>
         
@@ -293,57 +291,41 @@
                 <p>La etapa de trituración constituye el primer gran eslabón en el tratamiento físico del mineral extraído, permitiendo adecuar la granulometría exacta para optimizar la molienda mediante una <strong>reducción de tamaño</strong> eficiente.</p>
             </div>
             <div class="card">
-                <h4>Evolución y Equipos (Unidad B4)</h4>
-                <p>Infraestructura modernizada con unidades clave como la trituradora B4, operada bajo estrictos controles preventivos, seguimiento de vibraciones, frecuencias de lubricación y orden visual riguroso.</p>
+                <h4>Evolución y Equipos </h4>
+                <p>Infraestructura modernizada con nuevas unidades, operada bajo estrictos controles preventivos, seguimiento de vibraciones, frecuencias de lubricación y orden visual riguroso.</p>
             </div>
         </div>
 
-        <!-- TIRA DE SLIDER INFERIOR CON 5 IMÁGENES DE MUESTRA (ALARGADO) -->
         <div class="slider-section">
             <h4>Galería Operativa del Área de Trituración</h4>
             
             <div class="slider-container">
-                <!-- SLIDE 1 -->
-                <img src="img/B4.JPG" alt="Unidad Trituradora B4 1" class="slide active">
-                <div class="img-overlay-text">REFERENCIA TRITURACIÓN 1</div>
+                <img src="img/trituracion1.JPG" alt="Unidad Trituradora B4 1" class="slide active">
 
-                <!-- SLIDE 2 -->
-                <img src="img/DSC00252.JPG" alt="Línea de Trituración 2" class="slide">
-                <div class="img-overlay-text">REFERENCIA TRITURACIÓN 2</div>
+                <img src="img/trituracion2.JPG" alt="Línea de Trituración 2" class="slide">
 
-                <!-- SLIDE 3 -->
-                <img src="img/comunidad.jpeg" alt="Proceso de Conminución 3" class="slide">
-                <div class="img-overlay-text">REFERENCIA TRITURACIÓN 3</div>
+                <img src="img/trituracion3.JPG" alt="Proceso de Conminución 3" class="slide">
 
-                <!-- SLIDE 4 -->
-                <img src="img/extraccion-muestra4.jpg" alt="Equipo de Respaldo 4" class="slide">
-                <div class="img-overlay-text">REFERENCIA TRITURACIÓN 4</div>
+                <img src="img/trituracion4.JPG" alt="Equipo de Respaldo 4" class="slide">
 
-                <!-- SLIDE 5 -->
-                <img src="img/extraccion-muestra5.jpg" alt="Operación en Planta 5" class="slide">
-                <div class="img-overlay-text">REFERENCIA TRITURACIÓN 5</div>
+                <img src="img/trituracion5.JPG" alt="Operación en Planta 5" class="slide">
                 
-                <!-- BOTONES DE NAVEGACIÓN -->
                 <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
                 <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
             </div>
 
-            <!-- BOTONERA INFERIOR LIMPIA (SOLO UN BOTÓN HACIA MOLIENDA) -->
+            <!-- BOTONERA INFERIOR EQUILIBRADA -->
             <div class="process-nav">
-                <a href="molienda.html" class="btn-process">Siguiente: Molienda &rarr;</a>
+                <a href="molienda.html" class="btn-process">&larr; Siguiente: Molienda</a>
                 <a href="procesos.html" class="btn-process main">Volver a Procesos</a>
             </div>
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- SEGMENTO 4: PIE DE PÁGINA (FOOTER)         -->
-    <!-- ========================================== -->
     <footer>
         <p>&copy; 2026 Mina El Gran Porvenir Colombia. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- SCRIPT DEL SLIDER -->
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');

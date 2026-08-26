@@ -169,7 +169,6 @@
         .slide.active {
             opacity: 1;
         }
-        /* Estilo para el texto superpuesto de "Referencia Operativa" */
         .img-overlay-text {
             position: absolute;
             top: 50%;
@@ -207,7 +206,7 @@
         .prev { left: 15px; }
         .next { right: 15px; }
 
-        /* BOTONERA DE NAVEGACIÓN ENTRE PROCESOS (EQUILIBRADA) */
+        /* BOTONERA INFERIOR EQUILIBRADA (ESTÁNDAR) */
         .process-nav {
             display: flex;
             justify-content: center;
@@ -261,9 +260,6 @@
 </head>
 <body>
 
-    <!-- ========================================== -->
-    <!-- SEGMENTO 1: ENCABEZADO Y MENÚ DE NAVEGACIÓN -->
-    <!-- ========================================== -->
     <header>
         <div class="header-brand">
             <img src="img/LOGO.jpeg" alt="Logo Mina El Gran Porvenir" class="logo-img">
@@ -281,24 +277,18 @@
         </nav>
     </header>
 
-    <!-- ========================================== -->
-    <!-- SEGMENTO 2: PORTADA SECUNDARIA (HERO)      -->
-    <!-- ========================================== -->
     <div class="hero-sub">
         <h2>Área de Molienda y Clasificación</h2>
         <p>Circuitos avanzados para maximizar la liberación de partículas y la eficiencia metalúrgica.</p>
     </div>
 
-    <!-- ========================================== -->
-    <!-- SEGMENTO 3: CONTENIDO Y GALERÍA SLIDER (5) -->
-    <!-- ========================================== -->
     <section>
         <h3>Proceso, Evolución y Equipos de Molienda</h3>
         
         <div class="grid">
             <div class="card">
                 <h4>Proceso de Conminución Fina</h4>
-                <p>La etapa de molienda recibe el material reducido desde la trituración. Mediante circuitos integrados por molinos de barras y/o bolas, se logra la liberación óptima de las especies minerales valiosas para los procesos posteriores.</p>
+                <p>La etapa de molienda recibe el material reducido desde la trituración. Mediante circuitos integrados por molinos de bolas, se logra la liberación óptima de las especies minerales valiosas para los procesos posteriores.</p>
             </div>
             <div class="card">
                 <h4>Evolución y Tecnología</h4>
@@ -306,37 +296,25 @@
             </div>
         </div>
 
-        <!-- TIRA DE SLIDER INFERIOR CON 5 IMÁGENES DE MUESTRA (ALARGADO) -->
         <div class="slider-section">
             <h4>Galería Operativa del Área de Molienda</h4>
             
             <div class="slider-container">
-                <!-- SLIDE 1 -->
-                <img src="img/DSC00252.JPG" alt="Molino y Circuito 1" class="slide active">
-                <div class="img-overlay-text">REFERENCIA MOLIENDA 1</div>
+                <img src="img/molienda1.JPG" alt="Molino y Circuito 1" class="slide active">
 
-                <!-- SLIDE 2 -->
-                <img src="img/B4.JPG" alt="Operación de Molienda 2" class="slide">
-                <div class="img-overlay-text">REFERENCIA MOLIENDA 2</div>
+                <img src="img/molienda2.JPG" alt="Operación de Molienda 2" class="slide">
 
-                <!-- SLIDE 3 -->
-                <img src="img/comunidad.jpeg" alt="Clasificación de Mineral 3" class="slide">
-                <div class="img-overlay-text">REFERENCIA MOLIENDA 3</div>
+                <img src="img/molienda3.JPG" alt="Clasificación de Mineral 3" class="slide">
 
-                <!-- SLIDE 4 -->
-                <img src="img/extraccion-muestra4.jpg" alt="Circuito de Clasificación 4" class="slide">
-                <div class="img-overlay-text">REFERENCIA MOLIENDA 4</div>
+                <img src="img/molienda4.JPG" alt="Circuito de Clasificación 4" class="slide">
 
-                <!-- SLIDE 5 -->
-                <img src="img/extraccion-muestra5.jpg" alt="Control Metalúrgico 5" class="slide">
-                <div class="img-overlay-text">REFERENCIA MOLIENDA 5</div>
+                <img src="img/molienda5.JPG" alt="Control Metalúrgico 5" class="slide">
                 
-                <!-- BOTONES DE NAVEGACIÓN -->
                 <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
                 <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
             </div>
 
-            <!-- BOTONERA DE NAVEGACIÓN INFERIOR EQUILIBRADA -->
+            <!-- BOTONERA INFERIOR EQUILIBRADA -->
             <div class="process-nav">
                 <a href="trituracion.html" class="btn-process">&larr; Anterior: Trituración</a>
                 <a href="procesos.html" class="btn-process main">Volver a Procesos</a>
@@ -344,14 +322,10 @@
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- SEGMENTO 4: PIE DE PÁGINA (FOOTER)         -->
-    <!-- ========================================== -->
     <footer>
         <p>&copy; 2026 Mina El Gran Porvenir Colombia. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- SCRIPT DEL SLIDER -->
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
