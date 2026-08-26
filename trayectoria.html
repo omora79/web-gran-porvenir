@@ -111,11 +111,10 @@
             margin: 12px auto 0 auto;
         }
         
-        /* Estilos específicos para la línea de tiempo (futura) */
         /* Estilos específicos para la línea de tiempo (con espacio para imagen) */
         .timeline-container {
             position: relative;
-            max-width: 1000px; /* Un poco más ancha para que quepa la imagen */
+            max-width: 1000px;
             margin: 0 auto;
             padding: 40px 0;
         }
@@ -127,69 +126,54 @@
             top: 0;
             bottom: 0;
             left: 50%;
-            margin-left: -2px; /* La línea central */
+            margin-left: -2px;
         }
         .timeline-item {
-            padding: 15px 45px; /* Aumentamos un poco el padding */
+            padding: 15px 45px;
             position: relative;
             background-color: inherit;
             width: 50%;
         }
-        /* El punto/circulito de la línea */
         .timeline-item::after {
             content: '';
             position: absolute;
-            width: 24px; /* Un poco más grande */
+            width: 24px;
             height: 24px;
-            right: -12px; /* Centrado en la línea */
+            right: -12px;
             background-color: white;
             border: 4px solid var(--accent);
-            top: 25px; /* Ajustado para que coincida con la tarjeta */
+            top: 25px;
             border-radius: 50%;
             z-index: 1;
         }
         .left { left: 0; }
         .right { left: 50%; }
-        .right::after { left: -12px; } /* Centrado en la línea para items derechos */
+        .right::after { left: -12px; }
         
-        /* Contenedor principal de la tarjeta (blanco) */
         .content {
             position: relative;
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            overflow: hidden; /* Importante para que la imagen no se salga de bordes */
-            display: flex; /* Activamos flexbox para dos columnas */
-            align-items: stretch; /* Para que la imagen y el texto tengan la misma altura */
+            overflow: hidden;
+            display: flex;
+            align-items: stretch;
         }
 
-        /* Columna Izquierda: Espacio para la imagen */
         .timeline-img-col {
-            flex: 0 0 120px; /* Fijo, no crece ni encoge, ancho de 120px */
-            background-color: #eee; /* Fondo gris mientras no hay imagen */
+            flex: 0 0 120px;
+            background-color: #eee;
             position: relative;
         }
         .timeline-img-col img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* La imagen llena el espacio sin deformarse */
+            object-fit: cover;
             display: block;
         }
-        /* Texto de "PENDIENTE" si no hay imagen */
-        .img-placeholder-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 0.7rem;
-            color: #888;
-            text-align: center;
-            padding: 5px;
-        }
 
-        /* Columna Derecha: Espacio para el texto */
         .timeline-text-col {
-            flex: 1; /* Ocupa todo el espacio restante */
+            flex: 1;
             padding: 20px 25px;
         }
         .content h4 {
@@ -203,17 +187,37 @@
             color: #555;
         }
 
-        /* Ajuste responsive para pantallas pequeñas (tablets/móviles) */
+        /* PIE DE PÁGINA (ESTÁNDAR UNIFICADO) */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 4rem;
+            border-top: 1px solid #444;
+        }
+
         @media screen and (max-width: 768px) {
             .timeline-container::after { left: 31px; }
             .timeline-item { width: 100%; padding-left: 80px; padding-right: 25px; }
             .timeline-item::after { left: 19px; }
             .right { left: 0%; }
             
-            /* En móvil, la tarjeta vuelve a ser de una columna (apilada) */
             .content { flex-direction: column; }
-            .timeline-img-col { flex: 0 0 150px; /* Alto fijo en móvil para la imagen superior */}
+            .timeline-img-col { flex: 0 0 150px; }
             .timeline-text-col { padding: 15px; }
+        }
+        @media (max-width: 1000px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .header-brand {
+                margin-bottom: 15px;
+            }
+            nav {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -229,7 +233,7 @@
         </div>
         <nav>
             <a href="index.html">Inicio</a>
-            <a href="empresa.html">Empresa</a>
+            <a href="empresa.html" style="color: var(--accent); background: rgba(255,255,255,0.05);">Empresa</a>
             <a href="extraccion.html">Extracción</a>
             <a href="procesos.html">Procesos</a>
             <a href="mantenimiento.html">Mantenimiento</a>
@@ -241,7 +245,15 @@
     </header>
 
     <!-- ========================================== -->
-    <!-- SEGMENTO 3: LÍNEA DE TIEMPO (Con espacio para imagen) -->
+    <!-- SEGMENTO 2: PORTADA SECUNDARIA (HERO)      -->
+    <!-- ========================================== -->
+    <div class="hero-sub">
+        <h2>Nuestra Trayectoria e Historia</h2>
+        <p>Un recorrido desde nuestros inicios artesanales hasta la operación industrial moderna.</p>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 3: LÍNEA DE TIEMPO                 -->
     <!-- ========================================== -->
     <section>
         <h3>Evolución Histórica</h3>
@@ -252,15 +264,9 @@
             <!-- Item 1: Fundación (Lado Izquierdo) -->
             <div class="timeline-item left">
                 <div class="content">
-                    <!-- Columna Imagen -->
                     <div class="timeline-img-col">
-                        <!-- Pon tu imagen aquí -->
-                        <img src="img/fundacion.jpg" alt="Foto Fundación Mina El Gran Porvenir">
-                        <!-- O si no hay imagen, deja esto: -->
-                        <!-- <div class="img-placeholder-text">PENDIENTE FOTO</div> -->
+                        <img src="img/historia.JPG" alt="Foto Fundación Mina El Gran Porvenir">
                     </div>
-                    
-                    <!-- Columna Texto -->
                     <div class="timeline-text-col">
                         <h4>[Año de Fundación] - Inicios</h4>
                         <p>Fundación de la unidad minera por parte de la familia [Nombre de la familia], enfocada en la extracción artesanal en la región de El Líbano.</p>
@@ -271,12 +277,9 @@
             <!-- Item 2: Crecimiento (Lado Derecho) -->
             <div class="timeline-item right">
                 <div class="content">
-                    <!-- Columna Imagen -->
                     <div class="timeline-img-col">
-                        <img src="img/crecimiento.jpg" alt="Foto Crecimiento Mina">
+                        <img src="img/trituracion4.jpg" alt="Foto Crecimiento Mina">
                     </div>
-                    
-                    <!-- Columna Texto -->
                     <div class="timeline-text-col">
                         <h4>[Años] - Crecimiento y Consolidación</h4>
                         <p>Etapa de expansión de las labores subterráneas, incorporando mejoras en los métodos de explotación y seguridad básica.</p>
@@ -287,13 +290,9 @@
              <!-- Item 3: Modernización (Lado Izquierdo) -->
             <div class="timeline-item left">
                 <div class="content">
-                    <!-- Columna Imagen -->
                     <div class="timeline-img-col">
-                         <!-- Aquí podemos poner una foto antigua de la planta -->
-                         <div class="img-placeholder-text">FOTO PLANTA ANTIGUA</div>
+                        <img src="img/molienda4.jpg" alt="Foto Planta Antigua">
                     </div>
-                    
-                    <!-- Columna Texto -->
                     <div class="timeline-text-col">
                         <h4>[Año] - Hito de Modernización</h4>
                         <p>Inauguración de la primera planta de beneficio mecanizada, marcando el salto de la minería tradicional a procesos industriales.</p>
@@ -304,12 +303,9 @@
              <!-- Item 4: Actualidad (Lado Derecho) -->
             <div class="timeline-item right">
                 <div class="content">
-                    <!-- Columna Imagen -->
                     <div class="timeline-img-col">
-                        <img src="img/actualidad.jpg" alt="Foto Actualidad Mina Gran Porvenir">
+                        <img src="img/proyeccion.jpg" alt="Foto Actualidad Mina Gran Porvenir">
                     </div>
-                    
-                    <!-- Columna Texto -->
                     <div class="timeline-text-col">
                         <h4>[Año] - Actualidad y Visión Futura</h4>
                         <p>Consolidación como una empresa minera referente en el Tolima, con altos estándares de seguridad, responsabilidad ambiental y eficiencia operativa.</p>
