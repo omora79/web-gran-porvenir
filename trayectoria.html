@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Trayectoria | Mina El Gran Porvenir</title>
+    
+    <!-- ========================================== -->
+    <!-- SEGMENTO DE ESTILOS CSS (Diseño y Colores) -->
+    <!-- ========================================== -->
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #e67e22;
+            --light: #f4f6f7;
+            --gray: #7f8c8d;
+            --dark-card: #2c3e50;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--light);
+            color: var(--primary);
+            line-height: 1.6;
+        }
+        
+        /* ENCABEZADO Y MENÚ GLOBAL */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        header h1 {
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.3rem 0.7rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s, background 0.3s;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: var(--accent);
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .hero-sub {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img/DSC00252.JPG') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        .hero-sub h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        .hero-sub p {
+            font-size: 1.2rem;
+            color: #dcdde1;
+        }
+        
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+        section h3::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 12px auto 0 auto;
+        }
+        
+        /* Estilos específicos para la línea de tiempo (futura) */
+        /* Estilos específicos para la línea de tiempo (con espacio para imagen) */
+        .timeline-container {
+            position: relative;
+            max-width: 1000px; /* Un poco más ancha para que quepa la imagen */
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--gray);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px; /* La línea central */
+        }
+        .timeline-item {
+            padding: 15px 45px; /* Aumentamos un poco el padding */
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        /* El punto/circulito de la línea */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 24px; /* Un poco más grande */
+            height: 24px;
+            right: -12px; /* Centrado en la línea */
+            background-color: white;
+            border: 4px solid var(--accent);
+            top: 25px; /* Ajustado para que coincida con la tarjeta */
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left { left: 0; }
+        .right { left: 50%; }
+        .right::after { left: -12px; } /* Centrado en la línea para items derechos */
+        
+        /* Contenedor principal de la tarjeta (blanco) */
+        .content {
+            position: relative;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            overflow: hidden; /* Importante para que la imagen no se salga de bordes */
+            display: flex; /* Activamos flexbox para dos columnas */
+            align-items: stretch; /* Para que la imagen y el texto tengan la misma altura */
+        }
+
+        /* Columna Izquierda: Espacio para la imagen */
+        .timeline-img-col {
+            flex: 0 0 120px; /* Fijo, no crece ni encoge, ancho de 120px */
+            background-color: #eee; /* Fondo gris mientras no hay imagen */
+            position: relative;
+        }
+        .timeline-img-col img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* La imagen llena el espacio sin deformarse */
+            display: block;
+        }
+        /* Texto de "PENDIENTE" si no hay imagen */
+        .img-placeholder-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.7rem;
+            color: #888;
+            text-align: center;
+            padding: 5px;
+        }
+
+        /* Columna Derecha: Espacio para el texto */
+        .timeline-text-col {
+            flex: 1; /* Ocupa todo el espacio restante */
+            padding: 20px 25px;
+        }
+        .content h4 {
+            color: var(--dark-card);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        .content p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        /* Ajuste responsive para pantallas pequeñas (tablets/móviles) */
+        @media screen and (max-width: 768px) {
+            .timeline-container::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 80px; padding-right: 25px; }
+            .timeline-item::after { left: 19px; }
+            .right { left: 0%; }
+            
+            /* En móvil, la tarjeta vuelve a ser de una columna (apilada) */
+            .content { flex-direction: column; }
+            .timeline-img-col { flex: 0 0 150px; /* Alto fijo en móvil para la imagen superior */}
+            .timeline-text-col { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 1: ENCABEZADO Y MENÚ DE NAVEGACIÓN -->
+    <!-- ========================================== -->
+    <header>
+        <div class="header-brand">
+            <img src="img/LOGO.jpeg" alt="Logo Mina El Gran Porvenir" class="logo-img">
+            <h1>Mina El Gran Porvenir</h1>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="empresa.html">Empresa</a>
+            <a href="extraccion.html">Extracción</a>
+            <a href="procesos.html">Procesos</a>
+            <a href="mantenimiento.html">Mantenimiento</a>
+            <a href="personal.html">Personal y HSEQ</a>
+            <a href="comunidad.html">Comunidad y Medio ambiente</a>
+            <a href="index.html#trabaja">Empleo</a>
+            <a href="index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 3: LÍNEA DE TIEMPO (Con espacio para imagen) -->
+    <!-- ========================================== -->
+    <section>
+        <h3>Evolución Histórica</h3>
+        <p style="text-align: center; color: #555; margin-bottom: 2rem;">Un recorrido desde nuestros inicios artesanales hasta la operación industrial moderna.</p>
+        
+        <div class="timeline-container">
+            
+            <!-- Item 1: Fundación (Lado Izquierdo) -->
+            <div class="timeline-item left">
+                <div class="content">
+                    <!-- Columna Imagen -->
+                    <div class="timeline-img-col">
+                        <!-- Pon tu imagen aquí -->
+                        <img src="img/fundacion.jpg" alt="Foto Fundación Mina El Gran Porvenir">
+                        <!-- O si no hay imagen, deja esto: -->
+                        <!-- <div class="img-placeholder-text">PENDIENTE FOTO</div> -->
+                    </div>
+                    
+                    <!-- Columna Texto -->
+                    <div class="timeline-text-col">
+                        <h4>[Año de Fundación] - Inicios</h4>
+                        <p>Fundación de la unidad minera por parte de la familia [Nombre de la familia], enfocada en la extracción artesanal en la región de El Líbano.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2: Crecimiento (Lado Derecho) -->
+            <div class="timeline-item right">
+                <div class="content">
+                    <!-- Columna Imagen -->
+                    <div class="timeline-img-col">
+                        <img src="img/crecimiento.jpg" alt="Foto Crecimiento Mina">
+                    </div>
+                    
+                    <!-- Columna Texto -->
+                    <div class="timeline-text-col">
+                        <h4>[Años] - Crecimiento y Consolidación</h4>
+                        <p>Etapa de expansión de las labores subterráneas, incorporando mejoras en los métodos de explotación y seguridad básica.</p>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Item 3: Modernización (Lado Izquierdo) -->
+            <div class="timeline-item left">
+                <div class="content">
+                    <!-- Columna Imagen -->
+                    <div class="timeline-img-col">
+                         <!-- Aquí podemos poner una foto antigua de la planta -->
+                         <div class="img-placeholder-text">FOTO PLANTA ANTIGUA</div>
+                    </div>
+                    
+                    <!-- Columna Texto -->
+                    <div class="timeline-text-col">
+                        <h4>[Año] - Hito de Modernización</h4>
+                        <p>Inauguración de la primera planta de beneficio mecanizada, marcando el salto de la minería tradicional a procesos industriales.</p>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Item 4: Actualidad (Lado Derecho) -->
+            <div class="timeline-item right">
+                <div class="content">
+                    <!-- Columna Imagen -->
+                    <div class="timeline-img-col">
+                        <img src="img/actualidad.jpg" alt="Foto Actualidad Mina Gran Porvenir">
+                    </div>
+                    
+                    <!-- Columna Texto -->
+                    <div class="timeline-text-col">
+                        <h4>[Año] - Actualidad y Visión Futura</h4>
+                        <p>Consolidación como una empresa minera referente en el Tolima, con altos estándares de seguridad, responsabilidad ambiental y eficiencia operativa.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SEGMENTO 4: PIE DE PÁGINA (FOOTER)         -->
+    <!-- ========================================== -->
+    <footer>
+        <p>&copy; 2026 Mina El Gran Porvenir Colombia. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
